@@ -28,7 +28,7 @@ public final class CommandLine {
                 "                                             __/ | |                    \n" +
                 "                                            |___/|_|            ");
 
-        Util.printSoftwareVersion();
+        System.out.println("Version: " + Util.getSoftwareVersion());
 
         while (true) {
             try {
@@ -40,7 +40,8 @@ public final class CommandLine {
 
             } catch (CommandNotFound ignored) {}
             catch (Exception e) {
-                e.printStackTrace();
+                CMLineExceptionHandler.handle(this.getClass(), e);
+
                 listen();
             }
 
@@ -63,6 +64,7 @@ public final class CommandLine {
                 System.out.println("You have not provided a necessary argument");
                 return;
             }
+
             if(e.getClass().getDeclaringClass().equals(Exceptions.class)){ //if member of custom exceptions ignore they handle themselves
                 return;
             }

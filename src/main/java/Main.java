@@ -5,12 +5,17 @@
 import CommandLine.CommandLine;
 import Exceptions.Exceptions.CommandNotFound;
 
-public class NazunaCypher {
+public class Main {
 
     public static void runCommandLine() throws CommandNotFound {
         final CommandLine commandLine = CommandLine.getInstance();
 
         commandLine.listen();
+    }
+
+    public static void argumentParser(String[] args) throws CommandNotFound {
+
+
     }
 
     public static void main(String[] args) throws CommandNotFound {
@@ -19,8 +24,7 @@ public class NazunaCypher {
             return;
         }
 
-
-
+        argumentParser(args);
     }
 
 }
