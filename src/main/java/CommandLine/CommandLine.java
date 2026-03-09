@@ -51,7 +51,9 @@ public final class CommandLine {
 
     private void handle(String[] args) throws CommandNotFound {
         switch (args[0].toLowerCase(Locale.ROOT)){
+            case "help":
 
+                break;
 
             default: throw new CommandNotFound();
         }

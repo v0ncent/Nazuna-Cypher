@@ -6,21 +6,16 @@ import CommandLine.CommandLine;
 import Exceptions.Exceptions.CommandNotFound;
 
 public class Main {
-
-    public static void runCommandLine() throws CommandNotFound {
-        final CommandLine commandLine = CommandLine.getInstance();
-
-        commandLine.listen();
-    }
+    private static final CommandLine commandLine = CommandLine.getInstance();
 
     public static void argumentParser(String[] args) throws CommandNotFound {
-
 
     }
 
     public static void main(String[] args) throws CommandNotFound {
         if (args.length < 1) {
-            runCommandLine();
+            commandLine.listen();
+
             return;
         }
 
