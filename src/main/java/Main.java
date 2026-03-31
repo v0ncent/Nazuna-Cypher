@@ -4,6 +4,7 @@
 
 import CommandLine.CommandLine;
 import Exceptions.Exceptions.CommandNotFound;
+import NazunaCypher.EncryptionFunctions;
 
 public class Main {
     private static final CommandLine commandLine = CommandLine.getInstance();
@@ -13,13 +14,21 @@ public class Main {
     }
 
     public static void main(String[] args) throws CommandNotFound {
-        if (args.length < 1) {
-            commandLine.listen();
+//        if (args.length < 1) {
+//            commandLine.listen();
+//
+//            return;
+//        }
+//
+//        argumentParser(args);
 
-            return;
-        }
+        String input = "bruh";
+        input = EncryptionFunctions.reverse(input);
 
-        argumentParser(args);
+        System.out.println(input);
+
+        input = EncryptionFunctions.reverse(input);
+        System.out.println(input);
     }
 
 }
