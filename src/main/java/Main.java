@@ -22,12 +22,12 @@ public class Main {
 //
 //        argumentParser(args);
 
-        String input = "bruh";
-        input = EncryptionFunctions.reverse(input);
+        String input = "bruhxss";
+        input = EncryptionFunctions.swapTopBottom(input);
 
         System.out.println(input);
 
-        input = EncryptionFunctions.reverse(input);
+        input = EncryptionFunctions.swapTopBottom(input);
         System.out.println(input);
     }
 
