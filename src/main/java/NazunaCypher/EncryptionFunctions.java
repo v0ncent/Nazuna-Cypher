@@ -40,20 +40,17 @@ public final class EncryptionFunctions {
         final int evenBound = length - differenceToEven;
         final int columns = evenBound / 2;
 
-        // Build 2 x N matrix from the even-bound portion only
         char[][] matrix = new char[2][columns];
         for (int i = 0; i < evenBound; i++) {
             matrix[i / columns][i % columns] = letters[i];
         }
 
-        // Swap row 0 and row 1 column
         for (int i = 0; i < columns; i++) {
             char temp = matrix[0][i];
             matrix[0][i] = matrix[1][i];
             matrix[1][i] = temp;
         }
 
-        // Flatten matrix back into result, then append leftover tail as-is
         char[] result = new char[length];
         int idx = 0;
         for (char[] row : matrix) {
@@ -62,12 +59,13 @@ public final class EncryptionFunctions {
             }
         }
 
-        // Append any leftover characters unchanged at the end
         for (int i = evenBound; i < length; i++) {
             result[idx++] = letters[i];
         }
 
         return new String(result);
     }
+
+    
 
 }
